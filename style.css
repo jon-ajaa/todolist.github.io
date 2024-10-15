@@ -1,0 +1,523 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', 'sans-serif';
+}
+
+.hide {
+    opacity: 0;
+}
+
+header{
+    position: relative;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 80px;
+}
+
+header h4{
+    position: absolute;
+    left: 10%;
+    bottom: 1rem;
+    font-size: 1.6rem;
+}
+
+
+
+/*for splash screen*/
+.intro{
+    position: fixed;
+    z-index: 1;
+    left: 0%;
+    top: 0%;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    transition: 1s;
+}
+
+.logo-header{
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+
+}
+
+.logo{
+    position: relative;
+    display: inline-block;
+    bottom: -20px;
+    opacity: 0;
+}
+
+.logo-active{
+    bottom: 0;
+    opacity: 1;
+    transition: ease-in-out 0.5s;
+}
+
+.logo-fade{
+    bottom: 150px;
+    opacity: 0;
+    transition: ease-in-out 0.5s;
+}
+
+/*for todo section*/
+.wapper {
+    width: 400px;
+    margin: 10px auto;
+    padding: 10px;
+    padding-bottom: 50px;
+}
+
+.headertodo{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-content: space-between;
+    background: white;
+    padding: 10px;
+    border:1px solid black;
+    border-radius: 7px;
+}
+
+.headertodo > div{
+    text-transform: uppercase;
+}
+
+.current-date-time {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end; 
+    text-align: right; 
+}
+
+.day, .clock-time {
+    font-weight: bold; 
+}
+
+.today{
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+}
+
+.month_year{
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    font-size: 12px;
+    margin-top: 7px;
+}
+
+.date{
+    font-weight: 900;
+    font-size: 2em;
+    margin-right: 9px;
+}
+
+.year{
+    line-height: 14px;
+}
+
+.todo_list{
+    display: block;
+    width: 100%;
+    margin-top: 10px;
+    background: white;
+
+}
+
+.listItem{
+    display: grid;
+    grid-template-columns: 9fr 1fr;
+    padding: 10px;
+    border-radius: 10px;
+    border-bottom: 2px solid #eee;
+    transition: transform 0.3s ease;
+}
+
+.listItem:hover {
+    background-color: #eee;
+    transform: scale(1.03);
+}
+
+.listItem p {
+    font-weight: 500;
+}
+
+.listItem p small{
+    font-weight: lighter;
+}
+
+.listItem span{
+    width: 20px;
+    height: 20px;
+    border-radius: 10px;
+    border: 1px solid black;
+    background-color: white;
+    align-self: center;
+}
+
+.listItem.complete{
+    color: #999;
+    text-decoration: line-through;
+}
+
+.listItem.complete:hover {
+    background-color: #e0ffe0; 
+    cursor: pointer; 
+}
+
+.listItem.complete span{
+    background-color: #50dd67;
+    border-color: #2aba41;
+    border-radius: 10px;
+}
+
+/* styling buttons */
+.menuButton {
+    display: flex;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    color: #fff;
+    background-color: black;
+    text-align: center;
+    font-size: 2em;
+    margin-left: 165px;
+    margin-top: -20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    position: relative;
+}
+
+.menuButton:hover {
+    background-color: #1d1d1d;
+    transform: scale(1.1);
+}
+
+.menuButton i {
+    position: absolute;
+    transition: opacity 0.3s ease, transform 0.5s ease;
+    opacity: 0;
+    z-index: 1; 
+}
+
+.fa-bars {
+    opacity: 1;
+    z-index: 2; 
+}
+
+.fa-close {
+    opacity: 0;
+    z-index: 1;
+}
+
+.menuButton .fa-bars.rotate {
+    transform: rotate(90deg);
+}
+
+.menuButton .fa-close.rotate-back {
+    transform: rotate(0deg);
+}
+
+.menuButton:hover {
+    background-color: #1d1d1d;
+    transform: scale(1.1);
+}
+
+.menuButton i {
+    position: absolute;
+    transition: opacity 0.3s ease, transform 0.5s ease; 
+}
+
+.menuButton .fa-bars.rotate {
+    transform: rotate(90deg); 
+}
+
+.menuButton .fa-close.rotate-back {
+    transform: rotate(-90deg);
+}
+
+
+.addButton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    width: 40px;
+    height: 30px;
+    border: 1px solid black;
+    border-radius: 50%;
+    color: black;
+    background-color: white;
+    text-align: center;
+    margin-left: 165px;
+    margin-top: 15px;
+    cursor: pointer;
+    transition: .3s;
+}
+
+
+.addButton:hover {
+    background-color: lightgray;
+    transform: scale(1.1); 
+    border-color: darkgray; 
+}
+
+.addButton.move{
+    margin-left: -20px;
+    width: 60px;
+    height: 60px;
+    font-size: 2em;
+    margin-top: 0px;
+}
+
+.deleteButton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    width: 40px;
+    height: 30px;
+    border-radius: 50%;
+    color: #fff;
+    background-color: red;
+    text-align: center;
+    margin-left: 165px;
+    margin-top: 15px;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.deleteButton:hover {
+    background-color: #f14b4b;
+    transform: scale(1.1); 
+}
+
+.deleteButton.move{
+    margin-left: 350px;
+    width: 60px;
+    height: 60px;
+    font-size: 2em;
+    margin-top: 0px;
+}
+
+/*styling modal*/
+#modal{
+    width: 380px;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    border: 1px solid black;
+    position: fixed; 
+    top: 50%;
+    left: 50%;
+    z-index: 100;
+    display: none;
+    transform: translate(-50%, -50%) scale(0.9);
+    transition: transform 0.5s ease, opacity 0.3s ease;
+}
+
+#modal input{
+    display: block;
+    width: 90%;
+    border-radius: 5px;
+    padding: 15px;
+    border: 1px solid black;
+    margin-bottom: 20px;
+    color: gray;
+    transition: border-color 0.3s ease, background-color 0.3s ease; 
+}
+
+#modal input:hover {
+    border-color: #000000;
+    transform: scale(1.0);
+    background-color: #f0f8ff; 
+}
+
+#modal h4{
+    margin-bottom: 20px;
+}
+
+.addTodo{
+    color: white;
+    padding: 12px;
+    width: 90px;
+    background-color: green;
+    border-radius: 5px;
+    border: 2px black;
+    transition: background-color 0.3s, transform 0.3s, border-color 0.3s;
+}
+
+.addTodo:hover {
+    background-color: darkgreen;
+    transform: scale(1.05);
+    border-color: lime;
+}
+
+.cancelTodo{
+    color: red;
+    padding: 12px;
+    width: 90px;
+    background-color: white;
+    border-radius: 5px;
+    border: 1px solid red;
+    transition: background-color 0.3s, transform 0.3s, border-color 0.3s; 
+}
+
+.cancelTodo:hover {
+    color: white;
+    background-color: #e64242; 
+    transform: scale(1.05); 
+    border-color: darkred; 
+}
+
+.cover{
+    width: 100%;
+    min-height: 100%;
+    background-color: rgb(0, 0, 0, 0.4);
+    position: fixed;
+    z-index: 50;
+    top: 0;
+    left: 0;
+    display: none;
+}
+
+#modal.active, .cover.active{
+    display: block;
+}
+
+
+/*for sweetalert design*/
+
+.custom-swal-content {
+    font-size: 14px;
+    line-height: 1.5;
+    color: #555;
+    width: auto; /* Allow width to adjust to content */
+    height: auto; /* Allow height to adjust to content */
+    padding: 10px; /* Add padding for better spacing */
+}
+
+.custom-confirm-button {
+    background-color: #4CAF50;
+    color: white;
+}
+
+/*for about me section*/
+.aboutSection {
+    text-align: right;
+    margin-bottom: 10px;
+}
+
+.aboutButton {
+    font-size: 1.2em;
+    color: gray;
+    cursor: pointer; 
+    transition: transform 0.3s; 
+}
+
+.aboutButton:hover {
+    text-decoration: underline;
+    cursor: pointer;
+    transform: scale(1.05); 
+}
+
+.modal {
+    display: none; 
+    position: fixed;
+    z-index: 1000; 
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.7); 
+}
+
+.modal-content {
+    background-color: white; 
+    margin: auto; 
+    padding: 20px;
+    border: 1px solid black; 
+    border-radius: 10px; 
+    width: 300px; 
+    max-width: 90%;
+    text-align: left;
+    position: absolute;
+    top: 50%;
+    left: 50%; 
+    transform: translate(-50%, -50%);
+}
+
+.about-photo {
+    width: 100px;
+    height: 100px; 
+    border-radius: 50%; 
+    margin: 0 auto 15px; 
+    display: block; 
+    transition: transform 0.3s;
+}
+
+.about-photo:hover{
+    transform: scale(1.09);
+}
+
+/* close button styles */   
+.close {
+    cursor: pointer; 
+    font-size: 1.5em; 
+    color: black; 
+    float: right; 
+    transition: transform 0.3s;
+}
+
+.close:hover {
+    color: red; 
+    transform: scale(1.04);
+}
+
+/*socmed button*/
+.fa-instagram {
+    color: black;
+    padding: 20px;
+    font-size: 30px;
+    width: 30px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 50%;
+  }
+
+  .fa-github {
+    color: black;
+    padding: 20px;
+    font-size: 30px;
+    width: 30px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 50%;
+  }
+
+  .fa-whatsapp {
+    color: black;
+    padding: 20px;
+    font-size: 30px;
+    width: 30px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 50%;
+  }
+
+  .fa:hover {
+    opacity: 0.7;
+  }
+
+.sosmedsection {
+    text-align: center;
+}

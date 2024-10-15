@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Final Project</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <div class="intro">
+        <h1 class="logo-header">
+            <span class="logo">Wel</span><span class="logo">come!</span>
+        </h1>
+    </div>
+
+    <header>
+        <h4>Todolist</h4>
+    </header>
+
+    <div class="wapper">
+        <div class="aboutSection">
+            <span class="aboutButton" id="aboutButton">About me!</span>
+        </div>
+
+         <div class="headertodo">
+            <div class="today">
+                <span class="date">12</span>
+                <span class="month_year">
+                    <span class="month">Jan</span>
+                    <span class="year">2011</span>
+                </span>
+            </div>
+            <div class="current-date-time">
+                <span class="day" id="currentDay"></span> 
+                <span class="clock-time" id="currentTime"></span>
+            </div>
+         </div>
+
+         <div class="todo_list">
+            <div class="listItem">
+                <p>Title here<br/>
+                <small>23 March 2021</small></p>
+                <span></span>
+            </div>
+            <div class="listItem complete">
+                <p>Completed<br/>
+                <small>23 March 2021</small></p>
+                <span></span>
+            </div>
+        </div>
+        
+        <div class="btnContainer">
+            <span class="addButton">
+                <i class="fa fa-plus"></i>
+            </span>
+
+            <span class="deleteButton">
+                <i class="fa fa-trash"></i>
+            </span>
+
+            <span class="menuButton">
+                <i class="fa fa-bars"></i>
+                <i class="fa fa-close hide"></i> 
+            </span>
+            
+        </div>
+
+        <div id="modal">
+            <h4>New Todo</h4>
+            <form id="addForm">
+                <input type="text" class="newTitle" required/>
+                <input type="date" class="newDate" required/>
+                <p>
+                    <button type="submit" class="addTodo">Add</button>
+                    <button type="button" class="cancelTodo">Cancel</button>
+                </p>
+            </form>
+        </div>
+
+        <div class="cover"></div>
+        
+        <div id="aboutModal" class="modal">
+            <div class="modal-content">
+                <span class="close" id="closeAbout">&times;</span>
+                <img src="img/me.jpeg" alt="Me!" class="about-photo" />
+                <p style="font-size: medium; text-align: center;">Hi, my name is Muhammad Azhar Najib but you can call me Jon, Thank You!</p>
+                <br/>
+                <p style="font-size: small; text-align: center;">Developed by: <b>Jon</b></p>
+                <div class="sosmedsection">
+                    <a href="https://instagram.com/mhmd.azhaar" class="fa fa-instagram" target="_blank"></a>
+                    <a href="https://github.com/jon-ajaa" class="fa fa-github" target="_blank"></a>
+                    <a href="https://wa.me/085819452096?text=Haloo%20kenalan%20yuk!%20nama%20saya" class="fa fa-whatsapp" target="_blank"></a>
+                </div>
+            </div>
+        </div>
+    </div>
+ 
+    <script src="script.js"></script>
+</body>
+</html>
